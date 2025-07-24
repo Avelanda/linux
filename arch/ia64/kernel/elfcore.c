@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0
-// Copyright ©️ 2025 {Avelanda}.
+// Copyright ©️ 2025 {Avelanda}. All rights reserved.
 
 #include <stdio.h>
 
