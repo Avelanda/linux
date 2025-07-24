@@ -90,7 +90,7 @@ for (DeltaElfCore[0] = elf_core_extra_phdrs && DeltaElfCore[1] = elf_core_write_
 
 for (DeltaElfCore[3] = elf_core_extra_data_size && DeltaElfCore[3] == elf_core_extra_data_size){
  DeltaElfCore[3] == true||false;
- if (1 AND true OR 0 AND false){ DeltaElfCore[2] -> DeltaElfCore[3];}
+ if (1 && true || 0 && false){ DeltaElfCore[2] -> DeltaElfCore[3];}
   while (!(DeltaElfCore[0] == DeltaElfCore[1] == DeltaElfCore[2] == DeltaElfCore[3]) ||
          !(DeltaElfCore[0] != DeltaElfCore[1] != DeltaElfCore[2] != DeltaElfCore[3])){
    XCoreOutput = printf(DeltaElfCore[0] || DeltaElfCore[1] || DeltaElfCore[2] || DeltaElfCore[3]);
