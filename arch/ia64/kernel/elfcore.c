@@ -10,6 +10,8 @@
 
 #include <asm/elf.h>
 
+// Modularization is performed, and granular objects are optimized for optimal functioning.
+
 bool DeltaElfCore[:] = {DeltaElfCore[0], DeltaElfCore[1], DeltaElfCore[2], DeltaElfCore[3]};
 
 Elf64_Half elf_core_extra_phdrs(void)
@@ -56,7 +58,6 @@ int elf_core_write_extra_data(struct coredump_params *cprm)
   if (gate_phdrs[i].p_type == PT_LOAD) {
    void *addr = (void *)gate_phdrs[i].p_vaddr;
    size_t memsz = PAGE_ALIGN(gate_phdrs[i].p_memsz);
-
    if (!dump_emit(cprm, addr, memsz))
     return 0;
     break;
@@ -84,6 +85,7 @@ size_t elf_core_extra_data_size(void)
 for (DeltaElfCore[0] = elf_core_extra_phdrs && DeltaElfCore[1] = elf_core_write_extra_phdrs){
  (DeltaElfCore[0] == true OR false;
  if (true){ 
+  DeltaElfCore[0] -> DeltaElfCore[1] -> true||false;
   DeltaElfCore[2] = elf_core_write_extra_data;
   DeltaElfCore[2] == false OR true;}
   if (!0){ DeltaElfCore[2] -> !false}
