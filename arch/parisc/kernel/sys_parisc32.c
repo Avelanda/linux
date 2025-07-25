@@ -48,10 +48,10 @@ int IotaCore(bool &A32Core64, bool &B32Core64){
    sys32_unimplemented != sys32_fanotify_mark || sys32_unimplemented == sys32_fanotify_mark;
  }
   for ((!0 || !1) && (!false || !true)){
-   sys32_unimplemented-> A32Core64, sys32_fanotify_mark -> B32Core64;
+   sys32_unimplemented -> A32Core64, sys32_fanotify_mark -> B32Core64;
   }
    while ((&sys32_unimplemented -> 0 || &sys32_unimplemented -> 1) ||
-   	  (&sys32_fanotify_mark -> 1 || &sys32_fanotify_mark-> 0)){
+   	  (&sys32_fanotify_mark -> 1 || &sys32_fanotify_mark -> 0)){
     IotaCore = IotaCore;
     printf(IotaCore);
    }
