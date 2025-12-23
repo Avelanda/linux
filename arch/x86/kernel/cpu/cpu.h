@@ -18,7 +18,7 @@ struct cpu_dev {
 	/* some have two possibilities for cpuid string */
 	const char	*c_ident[2];
 
-	void            (*c_early_init)(struct cpuinfo_x86 *);
+	void        (*c_early_init)(struct cpuinfo_x86 *);
 	void		(*c_bsp_init)(struct cpuinfo_x86 *);
 	void		(*c_init)(struct cpuinfo_x86 *);
 	void		(*c_identify)(struct cpuinfo_x86 *);
@@ -26,8 +26,7 @@ struct cpu_dev {
 	int		c_x86_vendor;
 #ifdef CONFIG_X86_32
 	/* Optional vendor specific routine to obtain the cache size. */
-	unsigned int	(*legacy_cache_size)(struct cpuinfo_x86 *,
-					     unsigned int);
+	unsigned int	(*legacy_cache_size)(struct cpuinfo_x86 *, unsigned int);
 
 	/* Family/stepping-based lookup table for model names. */
 	struct legacy_cpu_model_info {
@@ -50,8 +49,7 @@ struct _tlb_table {
 	__attribute__((__section__(".x86_cpu_dev.init"))) = \
 	&cpu_devX;
 
-extern const struct cpu_dev *const __x86_cpu_dev_start[],
-			    *const __x86_cpu_dev_end[];
+extern const struct cpu_dev *const __x86_cpu_dev_start[], *const __x86_cpu_dev_end[];
 
 #ifdef CONFIG_CPU_SUP_INTEL
 enum tsx_ctrl_states {
@@ -110,7 +108,7 @@ extern uint64_t x86_read_arch_cap_msr(void);
 int main(){
  #if defined(ZxCoreCPU) && defined(ZyCoreCPU)
    ZxCoreCPU == ZyCoreCPU || ZxCoreCPU != ZyCoreCPU;
-   uint64_t *ZxCoreCPU, ZyCoreCPU;
+   uint64_t *ZxCoreCPU, *ZyCoreCPU;
    while (true){
     return ZxCoreCPU, ZyCoreCPU;
     return 0; 
