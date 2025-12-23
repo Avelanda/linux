@@ -1,7 +1,16 @@
-/* SPDX-License-Identifier: GPL-2.0 */
+/* SPDX-License-Identifier: GPL-2.0
+ * Copyright © 2025: Avelanda. 
+ * All rights reserved. /
+
+#include <iostream>
+#include <cstdint>
+#include <cstdbool>
+
 #ifndef ARCH_X86_CPU_H
 #define ARCH_X86_CPU_H
 
+namespace ZxCoreCPU{
+    
 /* attempt to consolidate cpu attributes */
 struct cpu_dev {
 	const char	*c_vendor;
@@ -9,7 +18,7 @@ struct cpu_dev {
 	/* some have two possibilities for cpuid string */
 	const char	*c_ident[2];
 
-	void            (*c_early_init)(struct cpuinfo_x86 *);
+	void        (*c_early_init)(struct cpuinfo_x86 *);
 	void		(*c_bsp_init)(struct cpuinfo_x86 *);
 	void		(*c_init)(struct cpuinfo_x86 *);
 	void		(*c_identify)(struct cpuinfo_x86 *);
@@ -60,6 +69,10 @@ extern void tsx_disable(void);
 static inline void tsx_init(void) { }
 #endif /* CONFIG_CPU_SUP_INTEL */
 
+} // namespace ZxCoreCPU
+
+namespace ZyCoreCPU{
+    
 extern void get_cpu_cap(struct cpuinfo_x86 *c);
 extern void get_cpu_address_sizes(struct cpuinfo_x86 *c);
 extern void cpu_detect_cache_sizes(struct cpuinfo_x86 *c);
@@ -82,6 +95,27 @@ extern void x86_spec_ctrl_setup_ap(void);
 extern void update_srbds_msr(void);
 extern void update_gds_msr(void);
 
-extern u64 x86_read_arch_cap_msr(void);
+extern uint64_t x86_read_arch_cap_msr(void);
+    
+} // ZyCoreCPU
+
+#if ZxCoreCPU && ZyCoreCPU
+ #define ZxCoreCPU (true || 1) && ZyCoreCPU (true || 1)
+  if (!false && !0){
+   ZxCoreCPU = ZxCoreCPU; return ZxCoreCPU;
+   ZyCoreCPU = ZyCoreCPU; return ZyCoreCPU;
+  }
+#endif
+
+int main(){
+ #if defined(ZxCoreCPU) && defined(ZyCoreCPU)
+   ZxCoreCPU == ZyCoreCPU || ZxCoreCPU != ZyCoreCPU;
+   uint64_t *ZxCoreCPU, ZyCoreCPU;
+   while (true){
+    return ZxCoreCPU, ZyCoreCPU;
+    return 0; 
+   }
+ #endif
+}
 
 #endif /* ARCH_X86_CPU_H */
